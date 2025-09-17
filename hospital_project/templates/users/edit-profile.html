@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content%}
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	
+	
+	
+
+<body>
+	<!-- Pre Loader -->
+	
+
+
+			<!-- Main Content -->
+			<div class="container">
+
+				<div class="row">
+					<!-- Widget Item -->
+					<div class="col-md-12">
+						<div class="widget-area-2 proclinic-box-shadow">
+							<h3 class="widget-title">Edit Profile</h3>
+							<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="Doctor-name">First Name</label>
+										<input type="text" value="Dr Daniel Smith" class="form-control" placeholder="Doctor name" id="Doctor-name">
+									</div>
+									
+                                    
+									<div class="form-group col-md-6">
+										<label for="age">Last Name</label>
+										<input type="text" value="29" placeholder="Age" class="form-control" id="age">
+									</div>
+
+                                    <div class="form-group col-md-6">
+										<label for="dob">Date Of Birth</label>
+										<input type="date" value="1989-12-12" placeholder="Date of Birth" class="form-control" id="dob">
+                                    </div>
+
+									<div class="form-group col-md-6">
+										<label for="phone">Phone</label>
+										<input type="text" value="+91 12345 67890" placeholder="Phone" class="form-control" id="phone">
+									</div>
+
+									<div class="form-group col-md-6">
+										<label for="email">Email</label>
+										<input type="email" class="form-control" id="email" name="email" value="{{ form.user.email }}">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="gender">Gender</label>
+										{{form.gender}}
+									</div>
+									<div class="form-group col-md-6">
+										<label for="about-doctor">Bio</label>
+										{{form.bio}} 
+                                    </div>
+                                    <div class="form-group col-md-6">
+										<label for="address">Address</label>
+										{{form.address}}
+									</div>
+									<div class="form-group col-md-12">
+										<label for="file">File</label>
+										<input type="file" class="form-control" id="file">
+									</div>
+																		
+									
+									<div class="form-group col-md-6 mb-3">
+										<button type="submit" class="btn btn-success btn-lg">Save</button>
+									</div>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+					<!-- /Widget Item -->
+				</div>
+			</div>
+			<!-- /Main Content -->
+			<!--Copy Rights-->
+			<div class="container">
+				<div class="d-sm-flex justify-content-center">
+				  <span class="text-muted text-center d-block d-sm-inline-block">Copyright © 2018 <a href="http://www.konnectplugins.com/" target="_blank">konnectcode</a>. All rights reserved.</span>
+				</div>
+			</div>
+			<!-- /Copy Rights-->
+		</div>
+		<!-- /Page Content -->
+	</div>
+	{%endblock%}
